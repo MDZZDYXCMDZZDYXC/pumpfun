@@ -1,5 +1,7 @@
 # pumpfun
 
+<img src="assets/icon-128.png" width="120" height="120" alt="pumpfun icon">
+
 **简体中文** · [English](README.md)
 
 面向 [Pumpkin](https://pumpkinmc.org) 服务器的「粘液科技」插件——把
@@ -130,6 +132,11 @@ src/
   guide.rs      指南与机器界面（渲染 + 点击处理）
   command.rs    /slimefun 命令树与处理
   text_util.rs  文本组件构造辅助
+assets/
+  make_icon.py  图标生成脚本（输出 icon.svg；装有 Pillow 时一并渲染各尺寸 PNG）
+  icon.svg      矢量图标源文件
+  icon-64/128/256/512.png
+                各尺寸位图图标，供 README 与仓库展示使用
 ```
 
 ## 说明与已知限制
@@ -141,6 +148,9 @@ src/
   服务器未实现的 API 版本上。该提示无害（与 `two048` 相同）。
 - 配方数据是从 Slimefun 源码**迁移的节选**，并非全部 500+ 物品与配方；新增物品/配方
   只需在 `item.rs` / `recipes.rs` / `machines.rs` 的常量表中追加条目。
+- `assets/` 下的图标由 `assets/make_icon.py` 生成。写出 `icon.svg` 无任何依赖；
+  渲染 PNG 需要 Pillow（`pip install pillow`）。已提交的 PNG 可直接使用，
+  仅在你想改设计时才需要重新生成。
 
 ## 许可
 
